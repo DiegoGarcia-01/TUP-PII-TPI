@@ -1,8 +1,9 @@
-# Trabajo Práctico I - Programación II
-
-
+# Trabajo Practico
 import os
-
+from bibloteca import ejemplares_prestados
+from bibloteca import prestar_ejemplar_libro
+from bibloteca import libros
+from bibloteca import devolver_ejemplar_libro
 print("Bienvenido!")
 respuesta = ''
 
@@ -20,10 +21,12 @@ while respuesta != "salir":
     os.system ("cls") #Limpiar pantalla
     if opt.isnumeric():
         if int(opt) == 1:
-            #completar
-            print()
+            ingrese_codigo = input("Ingrese el codigo del libro: ")
+            prestar_ejemplar_libro(ingrese_codigo,libros)
         elif int(opt) == 2:
-            #completar
+            ingrese_codigo = input("Ingrese el codigo del libro: ")
+            devolver_ejemplar_libro(ingrese_codigo, libros)
+            
             print()
         elif int(opt) == 3:
             #completar
@@ -32,7 +35,7 @@ while respuesta != "salir":
             #completar
             print()
         elif int(opt) == 5:
-            #completar
+            ejemplares_prestados(libros)
             print()
         elif int(opt) == 6:
             respuesta = "salir"
