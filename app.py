@@ -2,7 +2,6 @@
 import os
 from bibloteca import ejemplares_prestados
 from bibloteca import prestar_ejemplar_libro
-from bibloteca import libros
 from bibloteca import devolver_ejemplar_libro
 from  bibloteca import registrar_nuevo_libro
 from bibloteca import eliminar_ejemplar_libro
