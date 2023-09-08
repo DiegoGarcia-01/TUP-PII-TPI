@@ -4,6 +4,8 @@ from bibloteca import ejemplares_prestados
 from bibloteca import prestar_ejemplar_libro
 from bibloteca import libros
 from bibloteca import devolver_ejemplar_libro
+from  bibloteca import registrar_nuevo_libro
+from bibloteca import eliminar_ejemplar_libro
 print("Bienvenido!")
 respuesta = ''
 
@@ -22,21 +24,22 @@ while respuesta != "salir":
     if opt.isnumeric():
         if int(opt) == 1:
             ingrese_codigo = input("Ingrese el codigo del libro: ")
-            prestar_ejemplar_libro(ingrese_codigo,libros)
+            prestar_ejemplar_libro(ingrese_codigo)
         elif int(opt) == 2:
             ingrese_codigo = input("Ingrese el codigo del libro: ")
-            devolver_ejemplar_libro(ingrese_codigo, libros)
-            
-            print()
+            devolver_libro = devolver_ejemplar_libro(ingrese_codigo)
+            print(devolver_libro)
         elif int(opt) == 3:
+            registrar_libro = registrar_nuevo_libro() 
             #completar
-            print()
+            print(registrar_libro)
         elif int(opt) == 4:
+            ingrese_codigo = input("Ingrese el codigo del libro: ")
+            eliminacion = eliminar_ejemplar_libro(ingrese_codigo)
             #completar
-            print()
+            print(eliminacion)
         elif int(opt) == 5:
-            ejemplares_prestados(libros)
-            print()
+            ejemplares_prestados()
         elif int(opt) == 6:
             respuesta = "salir"
         else: print("Ingrese una opción válida")
